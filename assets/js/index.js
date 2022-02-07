@@ -19,17 +19,19 @@ function CarPrototype() {
     } else {
       return false;
     }
-  }
+  };
+
   this.brake = function (speedNum) {
     if (this.speed > 0) {
       return this.speed -= speedNum;
     }else {
       return false;
     }
-  }
+  };
+
   this.stop = function () {
     return this.speed = 0;
-  }
+  };
 }
 
 Car.prototype = new CarPrototype;
