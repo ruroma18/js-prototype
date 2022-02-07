@@ -14,8 +14,7 @@ function Car(manufacture, model, color, releaseYear, speed, maxSpeed, fuelConsum
 function CarPrototype() {
   this.accelerate = function (speedNum) {
     if (this.speed < this.maxSpeed) {
-      const currentSpeed = this.speed += speedNum;
-      return currentSpeed;
+      return this.speed += speedNum;
     } else {
       return false;
     }
@@ -24,7 +23,7 @@ function CarPrototype() {
   this.brake = function (speedNum) {
     if (this.speed > 0) {
       return this.speed -= speedNum;
-    }else {
+    } else {
       return false;
     }
   };
