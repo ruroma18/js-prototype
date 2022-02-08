@@ -1,3 +1,5 @@
+'use strict'
+
 function Car(manufacture, model, color, releaseYear, speed, maxSpeed, fuelConsumption, volume) {
 
   this.manufacture = manufacture;
