@@ -1,7 +1,19 @@
 'use strict'
 
 function Car(manufacture, model, color, releaseYear, speed, maxSpeed, fuelConsumption, volume) {
-
+  if (typeof manufacture !== 'string' ||
+    typeof model !== 'string' ||
+    typeof color !== 'string') {
+    throw new TypeError('Enter strings')
+  } else if (typeof releaseYear !== 'number' ||
+    typeof speed !== 'number' ||
+    typeof maxSpeed !== 'number' ||
+    typeof fuelConsumption !== 'number' ||
+    typeof volume !== 'number') {
+    throw new TypeError('Enter number')
+  } else if (speed < 0 || maxSpeed < 0) {
+    throw new Error('Speed mustn`t be a negative')
+  }
   this.manufacture = manufacture;
   this.model = model;
   this.color = color;
@@ -37,6 +49,6 @@ function CarPrototype() {
 
 Car.prototype = new CarPrototype;
 
-const car1 = new Car('audi', 'a7', 'black', 2018, 0, 220, 10.2, 69);
+const car1 = new Car('audi', 'a7', 'black', 2018, 10, 220, 10.2, 69);
 const car2 = new Car('bmw', '5', 'white', 2020, 0, 300, 9, 60);
 
